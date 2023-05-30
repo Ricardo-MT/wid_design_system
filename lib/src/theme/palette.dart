@@ -16,19 +16,19 @@ final Map<int, Color> _yellow = {
 /// Color palette for Wid Design System
 class WidAppColors {
   /// Color for success/completion feedback
-  static const Color success = Color.fromARGB(255, 53, 191, 46);
+  static const Color success = Color(0xFF189215);
 
   /// Color for info/warning feedback
   static const Color info = Color(0xFFFFC914);
 
   /// Color for error/alert feedback
-  static const Color error = Color(0xFFFB2346);
+  static const Color error = Color(0xFFCC0B15);
 
   /// Custom yellow color
   static const Color yellow = Color(0xFFFFC914);
 
   /// Custom white color
-  static const Color white = Color(0xFFFFFFFF);
+  static const Color white = Color(0xFFFEFEFE);
 
   /// Custom black color
   static const Color black = Color(0xFF1C1C1C);

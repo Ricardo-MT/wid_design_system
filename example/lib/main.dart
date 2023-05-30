@@ -32,7 +32,7 @@ class MyPresentationApp extends StatelessWidget {
       themeMode: Provider.of<WidThemeProvider>(context, listen: true).mode,
       home: Consumer<WidThemeProvider>(
         builder: ((context, value, child) =>
-            const MyHomePage(title: 'Wid DS Demo Page')),
+            const MyHomePage(title: 'Wid Design System Demo')),
       ),
     );
   }
