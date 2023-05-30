@@ -8,4 +8,5 @@ export 'src/theme/theme.dart';
 export 'src/utils/dimensions.dart';
 export 'src/wid_design_system.dart';
 export 'src/widgets/wid_button.dart';
+export 'src/widgets/wid_spacer.dart';
 export 'src/widgets/wid_text.dart';
