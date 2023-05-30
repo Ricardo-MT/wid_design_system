@@ -5,7 +5,13 @@
 [![License: MIT][license_badge]][license_link]
 [![Pub](https://img.shields.io/pub/v/wid_design_system)](https://pub.dev/packages/wid_design_system)
 
-Implementation for Wid Design System
+A collection of widgets, colors, styles, providers and asorted utils for implementing the Wid Design System.
+
+## Roadmap
+
+- [ ] Tests
+- [ ] More widgets
+- [ ] Performance improvements
 
 ## Installation 💻
 
