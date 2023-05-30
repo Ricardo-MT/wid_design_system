@@ -1,3 +1,3 @@
-# 0.1.0+10
+# 0.1.0-beta.1
 
 - feat: initial commit 🎉
