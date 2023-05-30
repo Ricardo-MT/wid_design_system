@@ -1,11 +1,12 @@
 name: wid_design_system
 description: Implementation for Wid Design System
+homepage: https://github.com/Ricardo-MT/wid_design_system
 version: 0.1.0+1
 
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
-  flutter: 3.10.0
+  flutter: ">=3.10.0"
 
 dependencies:
   flutter:
