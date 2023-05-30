@@ -14,4 +14,8 @@ on:
 # Publish using the reusable workflow from dart-lang.
 jobs:
   publish:
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    permissions:
+      id-token: write # This is required for authentication using OIDC
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
