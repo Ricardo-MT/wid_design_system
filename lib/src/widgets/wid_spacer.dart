@@ -18,10 +18,7 @@ class WidSpacer extends StatelessWidget {
 }
 
 /// Dummy widget for filling spaces. Size 0.
-const spacerZero = SizedBox(
-  height: 0,
-  width: 0,
-);
+const spacerZero = SizedBox.shrink();
 
 /// Dummy widget for filling spaces. Expanded.
 const spacerExpanded = Expanded(child: spacerZero);
