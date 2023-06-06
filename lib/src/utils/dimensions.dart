@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 /// Spacing and general dimensions
 class WidAppDimensions {
   /// Default size for borders
-  static double borderWidth = 1.6;
+  static double borderWidth = 1.5;
 
   /// Default radius for controllers
-  static double borderRadiusControllers = 12;
+  static double borderRadiusControllers = 6;
 
   /// Default height for controllers
   static double controllerHeight = 48;

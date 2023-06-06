@@ -1,63 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wid_design_system/src/theme/button_themes.dart';
+import 'package:wid_design_system/src/theme/input_theme.dart';
 import 'package:wid_design_system/src/theme/palette.dart';
-import 'package:wid_design_system/src/theme/text.dart';
+import 'package:wid_design_system/src/theme/text_theme.dart';
 
 /// Custom theme for Wid Design System
 abstract class WidAppTheme {
   /// Light theme implementation
   static ThemeData get light {
-    return ThemeData(
-      fontFamily: 'Quicksand',
-      splashColor: WidAppColors.grey1,
-      scaffoldBackgroundColor: Colors.white,
-      brightness: Brightness.light,
-      primaryColor: WidAppColors.primary,
-      textTheme: textTheme,
-      iconTheme: iconTheme,
-      progressIndicatorTheme: progressIndicatorTheme,
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: WidAppColors.yellow,
+    return common.copyWith(
+      splashColor: WidAppColors.grey3,
+      scaffoldBackgroundColor: WidAppColors.white,
+      textSelectionTheme: const TextSelectionThemeData(
+        cursorColor: WidAppColors.black,
+        selectionColor: WidAppColors.callToAction,
       ),
+      brightness: Brightness.light,
+      textTheme: WidTextTheme.lightTextTheme,
+      elevatedButtonTheme: WidButtonThemes.elevatedButtonLightTheme,
+      outlinedButtonTheme: WidButtonThemes.outlinedButtonLightTheme,
+      textButtonTheme: WidButtonThemes.textButtonLightTheme,
+      inputDecorationTheme: WidInputTheme.inputDecorationLightTheme,
       appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.white,
+        backgroundColor: WidAppColors.white,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarBrightness: Brightness.light,
         ),
         elevation: 0,
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: WidAppColors.black,
         ),
       ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: WidAppColors.yellow,
-        unselectedItemColor: WidAppColors.grey1,
-        landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
-        showUnselectedLabels: false,
-      ),
-      bottomSheetTheme: const BottomSheetThemeData(
-        backgroundColor: Colors.transparent,
-      ),
-      colorScheme: lightColorScheme
-          .copyWith(background: Colors.white)
-          .copyWith(error: WidAppColors.error),
+      colorScheme: lightColorScheme,
     );
   }
 
   /// Dark theme implementation
   static ThemeData get dark {
-    return ThemeData(
-      fontFamily: 'Quicksand',
-      splashColor: WidAppColors.grey1,
+    return common.copyWith(
+      splashColor: WidAppColors.grey0,
       scaffoldBackgroundColor: WidAppColors.black,
-      brightness: Brightness.dark,
-      primaryColor: WidAppColors.primary,
-      textTheme: textTheme,
-      iconTheme: iconTheme,
-      progressIndicatorTheme: progressIndicatorTheme,
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: WidAppColors.yellow,
+      textSelectionTheme: const TextSelectionThemeData(
+        cursorColor: WidAppColors.light,
+        selectionColor: WidAppColors.callToAction,
       ),
+      brightness: Brightness.dark,
+      textTheme: WidTextTheme.darkTextTheme,
+      elevatedButtonTheme: WidButtonThemes.elevatedButtonDarkTheme,
+      outlinedButtonTheme: WidButtonThemes.outlinedButtonDarkTheme,
+      textButtonTheme: WidButtonThemes.textButtonDarkTheme,
+      inputDecorationTheme: WidInputTheme.inputDecorationDarkTheme,
       appBarTheme: const AppBarTheme(
         backgroundColor: WidAppColors.black,
         systemOverlayStyle: SystemUiOverlayStyle(
@@ -65,84 +58,82 @@ abstract class WidAppTheme {
         ),
         elevation: 0,
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: WidAppColors.white,
         ),
       ),
+      colorScheme: darkColorScheme,
+    );
+  }
+
+  /// Common theme properties
+  static ThemeData get common {
+    return ThemeData(
+      useMaterial3: false,
+      fontFamily: 'Quicksand',
+      primaryColor: WidAppColors.primary,
+      iconTheme: iconTheme,
+      progressIndicatorTheme: progressIndicatorTheme,
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: WidAppColors.callToAction,
+      ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: WidAppColors.yellow,
+        selectedItemColor: WidAppColors.callToAction,
         unselectedItemColor: WidAppColors.grey1,
         landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
-        showUnselectedLabels: false,
+        showUnselectedLabels: true,
       ),
       bottomSheetTheme: const BottomSheetThemeData(
         backgroundColor: Colors.transparent,
       ),
-      colorScheme: darkColorScheme
-          .copyWith(background: Colors.white)
-          .copyWith(error: WidAppColors.error),
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.selected)) {
+              return WidAppColors.callToAction;
+            }
+            return null;
+          },
+        ),
+        trackColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.selected)) {
+              return WidAppColors.callToAction.withAlpha(140);
+            }
+            return null;
+          },
+        ),
+      ),
+      disabledColor: WidAppColors.grey2,
     );
-  }
-
-  /// Custom text theme
-  static TextTheme get textTheme {
-    return Typography.blackCupertino
-        .copyWith(
-          displayLarge: WidTextStyle.headerStyles,
-          displayMedium: WidTextStyle.headerStyles.copyWith(fontSize: 20),
-          displaySmall: WidTextStyle.headerStyles.copyWith(fontSize: 18),
-          headlineLarge: WidTextStyle.headerStyles,
-          headlineMedium: WidTextStyle.headerStyles.copyWith(fontSize: 16),
-          headlineSmall: WidTextStyle.headerStyles.copyWith(fontSize: 14),
-          titleLarge: WidTextStyle.headerStyles.copyWith(fontSize: 12),
-          bodyLarge: WidTextStyle.bodyStyles,
-          bodyMedium: WidTextStyle.bodyStyles.copyWith(fontSize: 14),
-          bodySmall: WidTextStyle.bodyStyles.copyWith(fontSize: 12),
-          labelLarge: WidTextStyle.buttonTextStyles,
-          labelMedium: WidTextStyle.buttonTextStyles.copyWith(fontSize: 14),
-          labelSmall: WidTextStyle.buttonTextStyles.copyWith(fontSize: 12),
-        )
-        .apply(
-          // bodyColor: WidAppColors.NEGRO,
-          // displayColor: WidAppColors.NEGRO,
-          fontFamily: 'Quicksand',
-        );
   }
 
   /// Custom light color theme
   static ColorScheme get lightColorScheme {
     return ThemeData.light().colorScheme.copyWith(
-          primary: WidAppColors.yellow,
-          onPrimary: WidAppColors.black,
-          secondary: WidAppColors.grey1,
-          onSecondary: WidAppColors.black,
+          background: WidAppColors.white,
           error: WidAppColors.error,
-          tertiary: WidAppColors.grey2,
-          brightness: Brightness.light,
+          primary: WidAppColors.white,
         );
   }
 
   /// Custom dark color theme
   static ColorScheme get darkColorScheme {
     return ThemeData.dark().colorScheme.copyWith(
-          primary: WidAppColors.black,
-          onPrimary: WidAppColors.yellow,
-          secondary: WidAppColors.black,
-          onSecondary: WidAppColors.grey1,
+          background: WidAppColors.dark,
           error: WidAppColors.error,
-          tertiary: WidAppColors.grey2,
-          brightness: Brightness.dark,
+          primary: WidAppColors.dark,
         );
   }
 
   /// Custom theme for Icons
   static IconThemeData get iconTheme {
     return const IconThemeData(
-      color: WidAppColors.yellow,
+      color: WidAppColors.callToAction,
     );
   }
 
   /// Custom theme for progress indicator
   static ProgressIndicatorThemeData get progressIndicatorTheme {
-    return const ProgressIndicatorThemeData(color: Colors.white);
+    return const ProgressIndicatorThemeData(color: WidAppColors.white);
   }
 }

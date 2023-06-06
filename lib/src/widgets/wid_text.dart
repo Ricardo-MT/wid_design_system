@@ -6,84 +6,98 @@ class WidText extends StatelessWidget {
   const WidText({
     required this.text,
     this.variant = WidTextVariant.bodyMedium,
+    this.style,
     super.key,
   });
 
   /// Text widget implementing displayLarge styles
   const WidText.displayLarge({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.displayLarge;
 
   /// Text widget implementing displayMedium styles
   const WidText.displayMedium({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.displayMedium;
 
   /// Text widget implementing displaySmall styles
   const WidText.displaySmall({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.displaySmall;
 
   /// Text widget implementing headlineLarge styles
   const WidText.headlineLarge({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.headlineLarge;
 
   /// Text widget implementing headlineMedium styles
   const WidText.headlineMedium({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.headlineMedium;
 
   /// Text widget implementing headlineSmall styles
   const WidText.headlineSmall({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.headlineSmall;
 
   /// Text widget implementing titleLarge styles
   const WidText.titleLarge({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.titleLarge;
 
   /// Text widget implementing bodyLarge styles
   const WidText.bodyLarge({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.bodyLarge;
 
   /// Text widget implementing bodyMedium styles
   const WidText.bodyMedium({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.bodyMedium;
 
   /// Text widget implementing bodySmall styles
   const WidText.bodySmall({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.bodySmall;
 
   /// Text widget implementing labelLarge styles
   const WidText.labelLarge({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.labelLarge;
 
   /// Text widget implementing labelMedium styles
   const WidText.labelMedium({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.labelMedium;
 
   /// Text widget implementing labelSmall styles
   const WidText.labelSmall({
     required this.text,
+    this.style,
     super.key,
   }) : variant = WidTextVariant.labelSmall;
 
@@ -93,11 +107,14 @@ class WidText extends StatelessWidget {
   /// The set of predefined text styles
   final WidTextVariant variant;
 
+  final TextStyle? style;
+
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: getStylesFromContextByVariant(context, variant),
+      style: getStylesFromContextByVariant(context, variant)
+          ?.merge(style ?? const TextStyle()),
     );
   }
 }

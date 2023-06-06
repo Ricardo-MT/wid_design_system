@@ -5,7 +5,7 @@ abstract class WidTextStyle {
   /// Text styles for labels
   static const TextStyle labelStyles = TextStyle(
     fontFamily: 'Quicksand',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.w400,
   );
 
@@ -19,21 +19,21 @@ abstract class WidTextStyle {
   /// Text styles for button labels
   static const TextStyle buttonTextStyles = TextStyle(
     fontFamily: 'Quicksand',
-    fontSize: 14,
-    fontWeight: FontWeight.bold,
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
   );
 
   /// Text styles for header-like texts
   static const TextStyle headerStyles = TextStyle(
     fontFamily: 'Quicksand',
     fontSize: 24,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w700,
   );
 
   /// Text styles for header-like texts
   static const TextStyle bodyStyles = TextStyle(
     fontFamily: 'Quicksand',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.w400,
   );
 

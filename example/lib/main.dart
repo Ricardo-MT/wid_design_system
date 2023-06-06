@@ -30,10 +30,7 @@ class MyPresentationApp extends StatelessWidget {
       darkTheme: WidAppTheme.dark,
       theme: WidAppTheme.light,
       themeMode: Provider.of<WidThemeProvider>(context, listen: true).mode,
-      home: Consumer<WidThemeProvider>(
-        builder: ((context, value, child) =>
-            const MyHomePage(title: 'Wid Design System Demo')),
-      ),
+      home: const MyHomePage(title: 'Wid Design System Demo'),
     );
   }
 }
@@ -54,23 +51,53 @@ class _MyHomePageState extends State<MyHomePage> {
         title: WidText.displayLarge(text: widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const WidText(text: 'Currently active theme:'),
-            WidText(
-                text: Provider.of<WidThemeProvider>(context, listen: true)
-                    .mode
-                    .toString()),
-          ],
+        child: SizedBox(
+          width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              const WidText(text: 'This is a regular text'),
+              TextFormField(
+                decoration: const InputDecoration(
+                    hintText: "Placeholdery", label: WidText(text: "Yeary")),
+              ),
+              spacerM,
+              const WidButton(
+                onPressed: dummyFunction,
+                text: "Contained",
+                variant: WidButtonVariant.contained,
+              ),
+              spacerM,
+              const WidButton(
+                onPressed: dummyFunction,
+                text: "Text",
+                variant: WidButtonVariant.text,
+              ),
+              spacerM,
+              const WidButton(
+                onPressed: dummyFunction,
+                text: "Outlined",
+                variant: WidButtonVariant.outlined,
+              ),
+              spacerM,
+              const WidButton(
+                onPressed: dummyFunction,
+                text: "Call to action",
+                variant: WidButtonVariant.callToAction,
+              ),
+            ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: Provider.of<WidThemeProvider>(context, listen: false)
-            .toggleThemeMode,
-        tooltip: 'Toggle theme',
-        child: const Icon(Icons.swap_calls),
-      ),
+      floatingActionButton: Switch.adaptive(
+          value: Provider.of<WidThemeProvider>(context, listen: true).mode ==
+              ThemeMode.light,
+          onChanged: (value) =>
+              Provider.of<WidThemeProvider>(context, listen: false)
+                  .toggleThemeMode()),
     );
   }
 }
+
+void dummyFunction() {}
