@@ -2,7 +2,7 @@ name: wid_design_system
 description: A collection of widgets, colors, styles, providers and asorted utils for implementing the Wid Design System.
 homepage: https://github.com/Ricardo-MT/wid_design_system
 repository: https://github.com/Ricardo-MT/wid_design_system
-version: 0.2.0-beta.1
+version: 0.2.0-beta.2
 
 
 environment:
