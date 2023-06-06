@@ -1,4 +1,4 @@
-# 0.2.0-beta.2
+# 0.2.0
 
 - feat: Added custom button with 4 variants 🎉
 - feat: Added several theme implementations for several widgets 🎉
