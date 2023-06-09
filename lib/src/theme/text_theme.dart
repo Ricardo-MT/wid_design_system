@@ -24,17 +24,13 @@ class WidTextTheme {
   /// Custom text theme
   static TextTheme get defaultTextTheme {
     return TextTheme(
-      displayLarge: WidTextStyle.headerStyles.copyWith(
-        fontSize: 38,
-      ),
+      displayLarge: WidTextStyle.headerStyles.copyWith(fontSize: 38),
 
       /// H2
       displayMedium: WidTextStyle.headerStyles.copyWith(fontSize: 32),
 
       /// H3
-      displaySmall: WidTextStyle.headerStyles.copyWith(
-        fontSize: 24,
-      ),
+      displaySmall: WidTextStyle.headerStyles.copyWith(fontSize: 24),
 
       /// H3
       headlineLarge: WidTextStyle.headerStyles.copyWith(fontSize: 24),

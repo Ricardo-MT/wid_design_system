@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:wid_design_system/src/theme/appbar_theme.dart';
+import 'package:wid_design_system/src/theme/bottom_appbar_theme.dart';
 import 'package:wid_design_system/src/theme/button_themes.dart';
 import 'package:wid_design_system/src/theme/input_theme.dart';
 import 'package:wid_design_system/src/theme/palette.dart';
@@ -22,15 +23,10 @@ abstract class WidAppTheme {
       outlinedButtonTheme: WidButtonThemes.outlinedButtonLightTheme,
       textButtonTheme: WidButtonThemes.textButtonLightTheme,
       inputDecorationTheme: WidInputTheme.inputDecorationLightTheme,
-      appBarTheme: const AppBarTheme(
-        backgroundColor: WidAppColors.white,
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarBrightness: Brightness.light,
-        ),
-        elevation: 0,
-        iconTheme: IconThemeData(
-          color: WidAppColors.black,
-        ),
+      appBarTheme: WidAppbarThem.lightAppbarTheme,
+      bottomAppBarTheme: WidBottomAppbarTheme.lightBottomAppbarTheme,
+      popupMenuTheme: const PopupMenuThemeData(
+        color: WidAppColors.white,
       ),
       colorScheme: lightColorScheme,
     );
@@ -51,15 +47,10 @@ abstract class WidAppTheme {
       outlinedButtonTheme: WidButtonThemes.outlinedButtonDarkTheme,
       textButtonTheme: WidButtonThemes.textButtonDarkTheme,
       inputDecorationTheme: WidInputTheme.inputDecorationDarkTheme,
-      appBarTheme: const AppBarTheme(
-        backgroundColor: WidAppColors.black,
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarBrightness: Brightness.dark,
-        ),
-        elevation: 0,
-        iconTheme: IconThemeData(
-          color: WidAppColors.white,
-        ),
+      appBarTheme: WidAppbarThem.darkAppbarTheme,
+      bottomAppBarTheme: WidBottomAppbarTheme.darkBottomAppbarTheme,
+      popupMenuTheme: const PopupMenuThemeData(
+        color: WidAppColors.black,
       ),
       colorScheme: darkColorScheme,
     );
@@ -101,6 +92,19 @@ abstract class WidAppTheme {
             }
             return null;
           },
+        ),
+      ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.selected)) {
+              return WidAppColors.callToAction;
+            }
+            return WidAppColors.grey2;
+          },
+        ),
+        shape: const ContinuousRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
       ),
       disabledColor: WidAppColors.grey2,

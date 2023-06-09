@@ -9,5 +9,6 @@ export 'src/utils/dimensions.dart';
 export 'src/wid_design_system.dart';
 export 'src/widgets/wid_button.dart';
 export 'src/widgets/wid_spacer.dart';
+export 'src/widgets/wid_tap_to_hide_keyboard.dart';
 export 'src/widgets/wid_text.dart';
 export 'src/widgets/wid_touchable.dart';
