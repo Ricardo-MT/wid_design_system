@@ -88,8 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   TextFormField(
                     decoration: const InputDecoration(
-                        hintText: "Placeholdery",
-                        label: WidText(text: "Yeary")),
+                        hintText: "Placeholdery", label: Text("Yeary")),
                   ),
                   spacerM,
                   const WidButton(

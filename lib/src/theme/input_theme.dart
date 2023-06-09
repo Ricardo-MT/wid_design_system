@@ -11,6 +11,8 @@ class WidInputTheme {
       contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
       hintStyle: const TextStyle(color: WidAppColors.grey2),
       helperStyle: const TextStyle(color: WidAppColors.grey2),
+      labelStyle: const TextStyle(color: WidAppColors.grey0),
+      floatingLabelStyle: const TextStyle(color: WidAppColors.grey2),
       border: OutlineInputBorder(
         borderSide: BorderSide(
           color: WidAppColors.dark,
@@ -62,6 +64,8 @@ class WidInputTheme {
       contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
       hintStyle: const TextStyle(color: WidAppColors.grey2),
       helperStyle: const TextStyle(color: WidAppColors.grey2),
+      labelStyle: const TextStyle(color: WidAppColors.grey3),
+      floatingLabelStyle: const TextStyle(color: WidAppColors.grey1),
       border: OutlineInputBorder(
         borderSide: BorderSide(
           color: WidAppColors.light,
