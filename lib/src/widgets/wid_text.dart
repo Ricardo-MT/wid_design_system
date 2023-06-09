@@ -107,6 +107,7 @@ class WidText extends StatelessWidget {
   /// The set of predefined text styles
   final WidTextVariant variant;
 
+  /// Custom styles
   final TextStyle? style;
 
   @override
