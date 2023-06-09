@@ -1,3 +1,6 @@
+# 0.2.2
+- hot-fix: Fixing deployment pipeline
+
 # 0.2.1
 - feat: Added WidTapToHideKeyboard widget 🎉
 - feat: Implemented AppBarThemes, BottomAppBarThemes, CheckboxThemes, PopupMenuThemes🎉
