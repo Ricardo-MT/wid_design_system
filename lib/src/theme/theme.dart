@@ -11,7 +11,7 @@ abstract class WidAppTheme {
   /// Light theme implementation
   static ThemeData get light {
     return common.copyWith(
-      splashColor: WidAppColors.grey3,
+      splashColor: WidAppColors.n300,
       scaffoldBackgroundColor: WidAppColors.white,
       textSelectionTheme: const TextSelectionThemeData(
         cursorColor: WidAppColors.black,
@@ -23,7 +23,7 @@ abstract class WidAppTheme {
       outlinedButtonTheme: WidButtonThemes.outlinedButtonLightTheme,
       textButtonTheme: WidButtonThemes.textButtonLightTheme,
       inputDecorationTheme: WidInputTheme.inputDecorationLightTheme,
-      appBarTheme: WidAppbarThem.lightAppbarTheme,
+      appBarTheme: WidAppbarTheme.lightAppbarTheme,
       bottomAppBarTheme: WidBottomAppbarTheme.lightBottomAppbarTheme,
       popupMenuTheme: const PopupMenuThemeData(
         color: WidAppColors.white,
@@ -35,7 +35,7 @@ abstract class WidAppTheme {
   /// Dark theme implementation
   static ThemeData get dark {
     return common.copyWith(
-      splashColor: WidAppColors.grey0,
+      splashColor: WidAppColors.n800,
       scaffoldBackgroundColor: WidAppColors.black,
       textSelectionTheme: const TextSelectionThemeData(
         cursorColor: WidAppColors.light,
@@ -47,7 +47,7 @@ abstract class WidAppTheme {
       outlinedButtonTheme: WidButtonThemes.outlinedButtonDarkTheme,
       textButtonTheme: WidButtonThemes.textButtonDarkTheme,
       inputDecorationTheme: WidInputTheme.inputDecorationDarkTheme,
-      appBarTheme: WidAppbarThem.darkAppbarTheme,
+      appBarTheme: WidAppbarTheme.darkAppbarTheme,
       bottomAppBarTheme: WidBottomAppbarTheme.darkBottomAppbarTheme,
       popupMenuTheme: const PopupMenuThemeData(
         color: WidAppColors.black,
@@ -62,14 +62,16 @@ abstract class WidAppTheme {
       useMaterial3: false,
       fontFamily: 'Quicksand',
       primaryColor: WidAppColors.primary,
+      primarySwatch: WidAppColors.primary,
       iconTheme: iconTheme,
       progressIndicatorTheme: progressIndicatorTheme,
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: WidAppColors.callToAction,
+        splashColor: WidAppColors.primary.shade800,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         selectedItemColor: WidAppColors.callToAction,
-        unselectedItemColor: WidAppColors.grey1,
+        unselectedItemColor: WidAppColors.n700,
         landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
         showUnselectedLabels: true,
       ),
@@ -100,14 +102,14 @@ abstract class WidAppTheme {
             if (states.contains(MaterialState.selected)) {
               return WidAppColors.callToAction;
             }
-            return WidAppColors.grey2;
+            return WidAppColors.n600;
           },
         ),
         shape: const ContinuousRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
       ),
-      disabledColor: WidAppColors.grey2,
+      disabledColor: WidAppColors.n600,
     );
   }
 

@@ -1,3 +1,8 @@
+# 0.2.3
+- hot-fix: Misspelling in Appbar theme
+- feat: Replaced grey1-4 with n100-900 palette color
+- feat: Implemented MaterialColor color swatch with pink
+
 # 0.2.2
 - hot-fix: Minor adjustment in input text´s label styles
 

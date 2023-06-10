@@ -13,6 +13,51 @@ A collection of widgets, colors, styles, providers and asorted utils for impleme
 - [ ] More widgets
 - [ ] Performance improvements
 
+## How to use
+
+Just import the package and you´ll get a `WidAppTheme.light` light theme and a `WidAppTheme.dark` dark theme out of the box. Check out the example for more detail.
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:wid_design_system/wid_design_system.dart';
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      darkTheme: WidAppTheme.dark,
+      theme: WidAppTheme.light,
+      home: const MyHomePage(title: 'My App'),
+    );
+  }
+}
+```
+
+You can also add this to your `pubspec.yaml` to include the `Quicksand` font provided by this package:
+
+```yaml
+flutter:
+  uses-material-design: true
+  generate: true
+
+  fonts:
+    - family: Quicksand
+      fonts:
+        - asset: packages/wid_design_system/fonts/Quicksand-Bold.ttf
+          weight: 700
+        - asset: packages/wid_design_system/fonts/Quicksand-SemiBold.ttf
+          weight: 600
+        - asset: packages/wid_design_system/fonts/Quicksand-Medium.ttf
+          weight: 500
+        - asset: packages/wid_design_system/fonts/Quicksand-Regular.ttf
+          weight: 400
+        - asset: packages/wid_design_system/fonts/Quicksand-Light.ttf
+          weight: 300
+```
+
 ## Installation 💻
 
 **❗ In order to start using Wid Design System you must have the [Flutter SDK][flutter_install_link] installed on your machine.**

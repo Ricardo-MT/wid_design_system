@@ -9,10 +9,10 @@ class WidInputTheme {
       isDense: true,
       isCollapsed: true,
       contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
-      hintStyle: const TextStyle(color: WidAppColors.grey2),
-      helperStyle: const TextStyle(color: WidAppColors.grey2),
-      labelStyle: const TextStyle(color: WidAppColors.grey0),
-      floatingLabelStyle: const TextStyle(color: WidAppColors.grey2),
+      hintStyle: const TextStyle(color: WidAppColors.n600),
+      helperStyle: const TextStyle(color: WidAppColors.n600),
+      labelStyle: const TextStyle(color: WidAppColors.n800),
+      floatingLabelStyle: const TextStyle(color: WidAppColors.n600),
       border: OutlineInputBorder(
         borderSide: BorderSide(
           color: WidAppColors.dark,
@@ -49,7 +49,7 @@ class WidInputTheme {
         borderRadius:
             BorderRadius.circular(WidAppDimensions.borderRadiusControllers),
         borderSide: BorderSide(
-          color: WidAppColors.grey4,
+          color: WidAppColors.n100,
           width: WidAppDimensions.borderWidth,
         ),
       ),
@@ -62,10 +62,10 @@ class WidInputTheme {
       isDense: true,
       isCollapsed: true,
       contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
-      hintStyle: const TextStyle(color: WidAppColors.grey2),
-      helperStyle: const TextStyle(color: WidAppColors.grey2),
-      labelStyle: const TextStyle(color: WidAppColors.grey3),
-      floatingLabelStyle: const TextStyle(color: WidAppColors.grey1),
+      hintStyle: const TextStyle(color: WidAppColors.n600),
+      helperStyle: const TextStyle(color: WidAppColors.n600),
+      labelStyle: const TextStyle(color: WidAppColors.n300),
+      floatingLabelStyle: const TextStyle(color: WidAppColors.n700),
       border: OutlineInputBorder(
         borderSide: BorderSide(
           color: WidAppColors.light,
@@ -102,7 +102,7 @@ class WidInputTheme {
         borderRadius:
             BorderRadius.circular(WidAppDimensions.borderRadiusControllers),
         borderSide: BorderSide(
-          color: WidAppColors.grey0,
+          color: WidAppColors.n800,
           width: WidAppDimensions.borderWidth,
         ),
       ),

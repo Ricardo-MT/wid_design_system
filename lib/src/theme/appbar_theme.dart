@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:wid_design_system/wid_design_system.dart';
 
 /// Appbar theme implementation
-class WidAppbarThem {
+class WidAppbarTheme {
   /// Custom light appbar theme
   static AppBarTheme get lightAppbarTheme {
     return const AppBarTheme(

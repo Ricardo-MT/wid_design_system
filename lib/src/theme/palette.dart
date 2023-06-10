@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 /// Primary color
 const Color _primary = Color(0xFFFF82B8);
 
-final Map<int, Color> _yellow = {
-  50: const Color(0xFFFFF9E3),
-  100: const Color(0xFFFFEFB9),
-  200: const Color(0xFFFFE48A),
-  300: const Color(0xFFFFD95B),
-  400: const Color(0xFFFFD137),
+final Map<int, Color> _pink = {
+  50: const Color(0xFFFDCDE2),
+  100: const Color(0xFFFEBDDA),
+  200: const Color(0xFFFEA6CC),
+  300: const Color(0xFFFF8EBF),
+  400: const Color(0xFFFC94C1),
   500: _primary,
-  600: const Color(0xFFFFC312),
-  700: const Color(0xFFFFBC0E),
-  800: const Color(0xFFFFB50B),
-  900: const Color(0xFFFFA906),
+  600: const Color(0xFFFD71AD),
+  700: const Color(0xFFFF509C),
+  800: const Color(0xFFFD2B86),
+  900: const Color(0xFFFF006F),
 };
 
 /// Color palette for Wid Design System
@@ -45,24 +45,36 @@ class WidAppColors {
   /// Custom black color
   static const Color black = Color(0xFF1C1C1C);
 
-  /// Custom grey color (shade 0)
-  static const Color grey0 = Color(0xFF595959);
+  /// Custom grey color (shade 100)
+  static const Color n100 = Color(0xFFF6F6F6);
 
-  /// Custom grey color (shade 1)
-  static const Color grey1 = Color(0xFF6B6B6B);
+  /// Custom grey color (shade 200)
+  static const Color n200 = Color(0xFFEAEAEA);
 
-  /// Custom grey color (shade 2)
-  static const Color grey2 = Color(0xFF7B7B7B);
+  /// Custom grey color (shade 300)
+  static const Color n300 = Color(0xFFD2D3D3);
 
-  /// Custom grey color (shade 3)
-  static const Color grey3 = Color(0xFFC7C7C7);
+  /// Custom grey color (shade 400)
+  static const Color n400 = Color(0xFFB1B2B2);
 
-  /// Custom grey color (shade 4)
-  static const Color grey4 = Color(0xFFF5F5F5);
+  /// Custom grey color (shade 500)
+  static const Color n500 = Color(0xFF8E9090);
+
+  /// Custom grey color (shade 600)
+  static const Color n600 = Color(0xFF7A7A7A);
+
+  /// Custom grey color (shade 700)
+  static const Color n700 = Color(0xFF6B6B6B);
+
+  /// Custom grey color (shade 800)
+  static const Color n800 = Color(0xFF363939);
+
+  /// Custom grey color (shade 900)
+  static const Color n900 = Color(0xFF252729);
 
   /// Background color
   static const Color background = white;
 
   /// Primary color
-  static MaterialColor primary = MaterialColor(_primary.value, _yellow);
+  static MaterialColor primary = MaterialColor(_primary.value, _pink);
 }
