@@ -25,6 +25,12 @@ abstract class WidAppTheme {
       inputDecorationTheme: WidInputTheme.inputDecorationLightTheme,
       appBarTheme: WidAppbarTheme.lightAppbarTheme,
       bottomAppBarTheme: WidBottomAppbarTheme.lightBottomAppbarTheme,
+      bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: WidAppColors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
+        ),
+      ),
       popupMenuTheme: const PopupMenuThemeData(
         color: WidAppColors.white,
       ),
@@ -49,6 +55,12 @@ abstract class WidAppTheme {
       inputDecorationTheme: WidInputTheme.inputDecorationDarkTheme,
       appBarTheme: WidAppbarTheme.darkAppbarTheme,
       bottomAppBarTheme: WidBottomAppbarTheme.darkBottomAppbarTheme,
+      bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: WidAppColors.black,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
+        ),
+      ),
       popupMenuTheme: const PopupMenuThemeData(
         color: WidAppColors.black,
       ),
@@ -74,9 +86,6 @@ abstract class WidAppTheme {
         unselectedItemColor: WidAppColors.n700,
         landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
         showUnselectedLabels: true,
-      ),
-      bottomSheetTheme: const BottomSheetThemeData(
-        backgroundColor: Colors.transparent,
       ),
       switchTheme: SwitchThemeData(
         thumbColor: MaterialStateProperty.resolveWith<Color?>(
@@ -108,6 +117,18 @@ abstract class WidAppTheme {
         shape: const ContinuousRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
+      ),
+      chipTheme: const ChipThemeData(
+        showCheckmark: false,
+        selectedColor: WidAppColors.callToAction,
+        backgroundColor: WidAppColors.n300,
+        disabledColor: WidAppColors.n300,
+        labelStyle: TextStyle(
+          color: WidAppColors.black,
+          fontFamily: 'Quicksand',
+          fontWeight: FontWeight.bold,
+        ),
+        brightness: Brightness.light,
       ),
       disabledColor: WidAppColors.n600,
     );

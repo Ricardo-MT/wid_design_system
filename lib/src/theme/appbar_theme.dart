@@ -7,6 +7,7 @@ class WidAppbarTheme {
   /// Custom light appbar theme
   static AppBarTheme get lightAppbarTheme {
     return const AppBarTheme(
+      centerTitle: false,
       foregroundColor: WidAppColors.black,
       backgroundColor: WidAppColors.white,
       systemOverlayStyle: SystemUiOverlayStyle(
@@ -22,6 +23,7 @@ class WidAppbarTheme {
   /// Custom dark appbar theme
   static AppBarTheme get darkAppbarTheme {
     return const AppBarTheme(
+      centerTitle: false,
       foregroundColor: WidAppColors.light,
       backgroundColor: WidAppColors.black,
       systemOverlayStyle: SystemUiOverlayStyle(

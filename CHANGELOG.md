@@ -1,3 +1,7 @@
+# 0.2.4
+- feat: Implemented ChipTheme
+- feat: Implemented BottomSheetTheme
+
 # 0.2.3
 - hot-fix: Misspelling in Appbar theme
 - feat: Replaced grey1-4 with n100-900 palette color

@@ -76,6 +76,20 @@ class _MyHomePageState extends State<MyHomePage> {
                           Provider.of<WidThemeProvider>(context, listen: false)
                               .toggleThemeMode()),
                   const Text('This is a regular text'),
+                  FilterChip(
+                    label: const Text("Selected"),
+                    selected: true,
+                    onSelected: (bool value) {},
+                  ),
+                  FilterChip(
+                      onSelected: (value) {},
+                      label: const Text("Not selected"),
+                      selected: false),
+                  InputChip(
+                    label: const Text("Input choice"),
+                    selected: false,
+                    onDeleted: () {},
+                  ),
                   const TodoListTile(
                     title: "Take out bin",
                     subtitle: "Tomorrow, maybe?",
@@ -91,9 +105,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         hintText: "Placeholdery", label: Text("Yeary")),
                   ),
                   spacerM,
-                  const WidButton(
-                    onPressed: dummyFunction,
-                    text: "Contained",
+                  WidButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) => Container(),
+                      );
+                    },
+                    text: "Contained (open dialog)",
                     variant: WidButtonVariant.contained,
                   ),
                   spacerM,
