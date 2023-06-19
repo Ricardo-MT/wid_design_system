@@ -100,6 +100,27 @@ class _MyHomePageState extends State<MyHomePage> {
                     subtitle: "Take a lot of money",
                     isCompleted: true,
                   ),
+                  DropdownButtonFormField<String>(
+                    items: const [
+                      DropdownMenuItem(
+                        value: "Blue",
+                        child: Text("Blue"),
+                      ),
+                      DropdownMenuItem(
+                        value: "Green",
+                        child: Text("Green"),
+                      ),
+                      DropdownMenuItem(
+                        value: "Yellow",
+                        child: Text("Yellow"),
+                      ),
+                    ],
+                    onChanged: (value) {},
+                    // hint: const Text("Some hint"),
+                    decoration: const InputDecoration(
+                        label: Text("Select color"), hintText: "More hint"),
+                  ),
+                  spacerL,
                   TextFormField(
                     decoration: const InputDecoration(
                         hintText: "Placeholdery", label: Text("Yeary")),

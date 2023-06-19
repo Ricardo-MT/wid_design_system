@@ -1,3 +1,6 @@
+# 0.2.5
+- feat: Improved color coexistence
+
 # 0.2.4
 - feat: Implemented ChipTheme
 - feat: Implemented BottomSheetTheme

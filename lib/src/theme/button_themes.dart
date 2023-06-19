@@ -90,4 +90,4 @@ class WidButtonThemes {
   }
 }
 
-const _buttonsPadding = EdgeInsets.symmetric(horizontal: 16, vertical: 14);
+const _buttonsPadding = EdgeInsets.symmetric(horizontal: 16, vertical: 10);

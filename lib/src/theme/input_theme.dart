@@ -9,10 +9,10 @@ class WidInputTheme {
       isDense: true,
       isCollapsed: true,
       contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
-      hintStyle: const TextStyle(color: WidAppColors.n600),
-      helperStyle: const TextStyle(color: WidAppColors.n600),
+      hintStyle: const TextStyle(color: WidAppColors.n700),
+      helperStyle: const TextStyle(color: WidAppColors.n700),
       labelStyle: const TextStyle(color: WidAppColors.n800),
-      floatingLabelStyle: const TextStyle(color: WidAppColors.n600),
+      floatingLabelStyle: const TextStyle(color: WidAppColors.n700),
       border: OutlineInputBorder(
         borderSide: BorderSide(
           color: WidAppColors.dark,
@@ -62,10 +62,10 @@ class WidInputTheme {
       isDense: true,
       isCollapsed: true,
       contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
-      hintStyle: const TextStyle(color: WidAppColors.n600),
-      helperStyle: const TextStyle(color: WidAppColors.n600),
-      labelStyle: const TextStyle(color: WidAppColors.n300),
-      floatingLabelStyle: const TextStyle(color: WidAppColors.n700),
+      hintStyle: const TextStyle(color: WidAppColors.n300),
+      helperStyle: const TextStyle(color: WidAppColors.n300),
+      labelStyle: const TextStyle(color: WidAppColors.n200),
+      floatingLabelStyle: const TextStyle(color: WidAppColors.n300),
       border: OutlineInputBorder(
         borderSide: BorderSide(
           color: WidAppColors.light,

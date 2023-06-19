@@ -12,6 +12,8 @@ abstract class WidAppTheme {
   static ThemeData get light {
     return common.copyWith(
       splashColor: WidAppColors.n300,
+      hintColor: WidAppColors.n300,
+      canvasColor: WidAppColors.n100,
       scaffoldBackgroundColor: WidAppColors.white,
       textSelectionTheme: const TextSelectionThemeData(
         cursorColor: WidAppColors.black,
@@ -32,7 +34,7 @@ abstract class WidAppTheme {
         ),
       ),
       popupMenuTheme: const PopupMenuThemeData(
-        color: WidAppColors.white,
+        color: WidAppColors.light,
       ),
       colorScheme: lightColorScheme,
     );
@@ -42,6 +44,8 @@ abstract class WidAppTheme {
   static ThemeData get dark {
     return common.copyWith(
       splashColor: WidAppColors.n800,
+      hintColor: WidAppColors.n800,
+      canvasColor: WidAppColors.n800,
       scaffoldBackgroundColor: WidAppColors.black,
       textSelectionTheme: const TextSelectionThemeData(
         cursorColor: WidAppColors.light,
@@ -62,7 +66,7 @@ abstract class WidAppTheme {
         ),
       ),
       popupMenuTheme: const PopupMenuThemeData(
-        color: WidAppColors.black,
+        color: WidAppColors.n800,
       ),
       colorScheme: darkColorScheme,
     );
@@ -130,6 +134,7 @@ abstract class WidAppTheme {
         ),
         brightness: Brightness.light,
       ),
+      dividerColor: WidAppColors.n500,
       disabledColor: WidAppColors.n600,
     );
   }
