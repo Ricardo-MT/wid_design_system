@@ -1,3 +1,6 @@
+# 0.2.6
+- hot-fix: Fixed button theme colors
+
 # 0.2.5
 - feat: Improved color coexistence
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wid_design_system/src/theme/appbar_theme.dart';
 import 'package:wid_design_system/src/theme/bottom_appbar_theme.dart';
+import 'package:wid_design_system/src/theme/bottom_sheet_theme.dart';
 import 'package:wid_design_system/src/theme/button_themes.dart';
 import 'package:wid_design_system/src/theme/input_theme.dart';
 import 'package:wid_design_system/src/theme/palette.dart';
@@ -27,12 +28,7 @@ abstract class WidAppTheme {
       inputDecorationTheme: WidInputTheme.inputDecorationLightTheme,
       appBarTheme: WidAppbarTheme.lightAppbarTheme,
       bottomAppBarTheme: WidBottomAppbarTheme.lightBottomAppbarTheme,
-      bottomSheetTheme: const BottomSheetThemeData(
-        backgroundColor: WidAppColors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
-        ),
-      ),
+      bottomSheetTheme: WidBottomSheetTheme.lightBottomSheetTheme,
       popupMenuTheme: const PopupMenuThemeData(
         color: WidAppColors.light,
       ),
@@ -59,12 +55,7 @@ abstract class WidAppTheme {
       inputDecorationTheme: WidInputTheme.inputDecorationDarkTheme,
       appBarTheme: WidAppbarTheme.darkAppbarTheme,
       bottomAppBarTheme: WidBottomAppbarTheme.darkBottomAppbarTheme,
-      bottomSheetTheme: const BottomSheetThemeData(
-        backgroundColor: WidAppColors.black,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
-        ),
-      ),
+      bottomSheetTheme: WidBottomSheetTheme.darkBottomSheetTheme,
       popupMenuTheme: const PopupMenuThemeData(
         color: WidAppColors.n800,
       ),

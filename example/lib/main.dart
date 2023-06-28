@@ -76,6 +76,33 @@ class _MyHomePageState extends State<MyHomePage> {
                           Provider.of<WidThemeProvider>(context, listen: false)
                               .toggleThemeMode()),
                   const Text('This is a regular text'),
+                  spacerM,
+                  ElevatedButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) => Container(),
+                      );
+                    },
+                    child: const Text("Contained (open dialog)"),
+                  ),
+                  spacerM,
+                  const TextButton(
+                    onPressed: dummyFunction,
+                    child: Text("Text"),
+                  ),
+                  spacerM,
+                  const OutlinedButton(
+                    onPressed: dummyFunction,
+                    child: Text("Outlined"),
+                  ),
+                  spacerM,
+                  const WidButton(
+                    onPressed: dummyFunction,
+                    text: "Call to action",
+                    variant: WidButtonVariant.callToAction,
+                  ),
+                  spacerM,
                   FilterChip(
                     label: const Text("Selected"),
                     selected: true,
@@ -124,35 +151,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextFormField(
                     decoration: const InputDecoration(
                         hintText: "Placeholdery", label: Text("Yeary")),
-                  ),
-                  spacerM,
-                  WidButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (context) => Container(),
-                      );
-                    },
-                    text: "Contained (open dialog)",
-                    variant: WidButtonVariant.contained,
-                  ),
-                  spacerM,
-                  const WidButton(
-                    onPressed: dummyFunction,
-                    text: "Text",
-                    variant: WidButtonVariant.text,
-                  ),
-                  spacerM,
-                  const WidButton(
-                    onPressed: dummyFunction,
-                    text: "Outlined",
-                    variant: WidButtonVariant.outlined,
-                  ),
-                  spacerM,
-                  const WidButton(
-                    onPressed: dummyFunction,
-                    text: "Call to action",
-                    variant: WidButtonVariant.callToAction,
                   ),
                 ],
               ),

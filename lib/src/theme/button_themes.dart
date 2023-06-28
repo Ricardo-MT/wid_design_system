@@ -39,6 +39,7 @@ class WidButtonThemes {
   static OutlinedButtonThemeData get outlinedButtonDarkTheme {
     return OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
+        foregroundColor: WidAppColors.light,
         padding: _buttonsPadding,
         side: BorderSide(
           color: WidAppColors.light,
@@ -57,6 +58,7 @@ class WidButtonThemes {
   static OutlinedButtonThemeData get outlinedButtonLightTheme {
     return OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
+        foregroundColor: WidAppColors.dark,
         padding: _buttonsPadding,
         side: BorderSide(
           color: WidAppColors.dark,
@@ -75,6 +77,7 @@ class WidButtonThemes {
   static TextButtonThemeData get textButtonLightTheme {
     return TextButtonThemeData(
       style: TextButton.styleFrom(
+        foregroundColor: WidAppColors.dark,
         padding: _buttonsPadding,
       ),
     );
@@ -84,6 +87,7 @@ class WidButtonThemes {
   static TextButtonThemeData get textButtonDarkTheme {
     return TextButtonThemeData(
       style: TextButton.styleFrom(
+        foregroundColor: WidAppColors.light,
         padding: _buttonsPadding,
       ),
     );
