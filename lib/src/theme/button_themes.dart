@@ -6,31 +6,57 @@ class WidButtonThemes {
   /// Elevated button for dark theme
   static ElevatedButtonThemeData get elevatedButtonDarkTheme {
     return ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        padding: _buttonsPadding,
-        backgroundColor: WidAppColors.light,
-        foregroundColor: WidAppColors.dark,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(WidAppDimensions.borderRadiusControllers),
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(_buttonsPadding),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return WidAppColors.n300;
+          }
+          return WidAppColors.primary.shade600;
+        }),
+        foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return WidAppColors.n400;
+          }
+          return WidAppColors.light;
+        }),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(WidAppDimensions.borderRadiusControllers),
+            ),
           ),
         ),
+        textStyle: MaterialStateProperty.all(_textStyles),
       ),
     );
   }
 
-  /// Elevated button for dark theme
+  /// Elevated button for light theme
   static ElevatedButtonThemeData get elevatedButtonLightTheme {
     return ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        padding: _buttonsPadding,
-        backgroundColor: WidAppColors.dark,
-        foregroundColor: WidAppColors.light,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(WidAppDimensions.borderRadiusControllers),
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(_buttonsPadding),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return WidAppColors.n300;
+          }
+          return WidAppColors.primary.shade600;
+        }),
+        foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return WidAppColors.n400;
+          }
+          return WidAppColors.light;
+        }),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(WidAppDimensions.borderRadiusControllers),
+            ),
           ),
         ),
+        textStyle: MaterialStateProperty.all(_textStyles),
       ),
     );
   }
@@ -38,18 +64,34 @@ class WidButtonThemes {
   /// Outlined button for dark theme
   static OutlinedButtonThemeData get outlinedButtonDarkTheme {
     return OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-        foregroundColor: WidAppColors.light,
-        padding: _buttonsPadding,
-        side: BorderSide(
-          color: WidAppColors.light,
-          width: WidAppDimensions.borderWidth,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(WidAppDimensions.borderRadiusControllers),
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(_buttonsPadding),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(WidAppDimensions.borderRadiusControllers),
+            ),
           ),
         ),
+        side: MaterialStateProperty.resolveWith<BorderSide>((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return BorderSide(
+              color: WidAppColors.n600,
+              width: WidAppDimensions.borderWidth,
+            );
+          }
+          return BorderSide(
+            color: WidAppColors.primary,
+            width: WidAppDimensions.borderWidth,
+          );
+        }),
+        foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return WidAppColors.n600;
+          }
+          return WidAppColors.primary;
+        }),
+        textStyle: MaterialStateProperty.all(_textStyles),
       ),
     );
   }
@@ -57,18 +99,34 @@ class WidButtonThemes {
   /// Outlined button for light theme
   static OutlinedButtonThemeData get outlinedButtonLightTheme {
     return OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-        foregroundColor: WidAppColors.dark,
-        padding: _buttonsPadding,
-        side: BorderSide(
-          color: WidAppColors.dark,
-          width: WidAppDimensions.borderWidth,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(WidAppDimensions.borderRadiusControllers),
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(_buttonsPadding),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(WidAppDimensions.borderRadiusControllers),
+            ),
           ),
         ),
+        side: MaterialStateProperty.resolveWith<BorderSide>((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return BorderSide(
+              color: WidAppColors.n500,
+              width: WidAppDimensions.borderWidth,
+            );
+          }
+          return BorderSide(
+            color: WidAppColors.primary,
+            width: WidAppDimensions.borderWidth,
+          );
+        }),
+        foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return WidAppColors.n500;
+          }
+          return WidAppColors.primary;
+        }),
+        textStyle: MaterialStateProperty.all(_textStyles),
       ),
     );
   }
@@ -77,8 +135,9 @@ class WidButtonThemes {
   static TextButtonThemeData get textButtonLightTheme {
     return TextButtonThemeData(
       style: TextButton.styleFrom(
-        foregroundColor: WidAppColors.dark,
         padding: _buttonsPadding,
+        foregroundColor: WidAppColors.primary,
+        textStyle: _textStyles,
       ),
     );
   }
@@ -87,11 +146,16 @@ class WidButtonThemes {
   static TextButtonThemeData get textButtonDarkTheme {
     return TextButtonThemeData(
       style: TextButton.styleFrom(
-        foregroundColor: WidAppColors.light,
         padding: _buttonsPadding,
+        foregroundColor: WidAppColors.primary,
+        textStyle: _textStyles,
       ),
     );
   }
 }
 
 const _buttonsPadding = EdgeInsets.symmetric(horizontal: 16, vertical: 10);
+const _textStyles = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontFamily: 'Quicksand',
+);

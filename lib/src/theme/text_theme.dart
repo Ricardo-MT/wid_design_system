@@ -6,8 +6,6 @@ class WidTextTheme {
   /// Custom light text theme
   static TextTheme get lightTextTheme {
     return Typography.blackCupertino.merge(defaultTextTheme).apply(
-          // bodyColor: WidAppColors.dark,
-          // displayColor: WidAppColors.dark,
           fontFamily: 'Quicksand',
         );
   }
@@ -15,8 +13,6 @@ class WidTextTheme {
   /// Custom dark text theme
   static TextTheme get darkTextTheme {
     return Typography.whiteCupertino.merge(defaultTextTheme).apply(
-          // bodyColor: WidAppColors.dark,
-          // displayColor: WidAppColors.dark,
           fontFamily: 'Quicksand',
         );
   }

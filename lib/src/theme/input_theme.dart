@@ -15,7 +15,7 @@ class WidInputTheme {
       floatingLabelStyle: const TextStyle(color: WidAppColors.n700),
       border: OutlineInputBorder(
         borderSide: BorderSide(
-          color: WidAppColors.dark,
+          color: WidAppColors.n300,
           width: WidAppDimensions.borderWidth,
         ),
         borderRadius:
@@ -33,7 +33,7 @@ class WidInputTheme {
         borderRadius:
             BorderRadius.circular(WidAppDimensions.borderRadiusControllers),
         borderSide: BorderSide(
-          color: WidAppColors.callToAction,
+          color: WidAppColors.primary,
           width: WidAppDimensions.borderWidth,
         ),
       ),
@@ -41,7 +41,7 @@ class WidInputTheme {
         borderRadius:
             BorderRadius.circular(WidAppDimensions.borderRadiusControllers),
         borderSide: BorderSide(
-          color: WidAppColors.dark,
+          color: WidAppColors.n300,
           width: WidAppDimensions.borderWidth,
         ),
       ),
@@ -68,7 +68,7 @@ class WidInputTheme {
       floatingLabelStyle: const TextStyle(color: WidAppColors.n300),
       border: OutlineInputBorder(
         borderSide: BorderSide(
-          color: WidAppColors.light,
+          color: WidAppColors.n200,
           width: WidAppDimensions.borderWidth,
         ),
         borderRadius:
@@ -86,7 +86,7 @@ class WidInputTheme {
         borderRadius:
             BorderRadius.circular(WidAppDimensions.borderRadiusControllers),
         borderSide: BorderSide(
-          color: WidAppColors.callToAction,
+          color: WidAppColors.primary,
           width: WidAppDimensions.borderWidth,
         ),
       ),
@@ -94,7 +94,7 @@ class WidInputTheme {
         borderRadius:
             BorderRadius.circular(WidAppDimensions.borderRadiusControllers),
         borderSide: BorderSide(
-          color: WidAppColors.light,
+          color: WidAppColors.n200,
           width: WidAppDimensions.borderWidth,
         ),
       ),

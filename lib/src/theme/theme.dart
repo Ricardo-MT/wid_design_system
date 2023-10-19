@@ -3,9 +3,11 @@ import 'package:wid_design_system/src/theme/appbar_theme.dart';
 import 'package:wid_design_system/src/theme/bottom_appbar_theme.dart';
 import 'package:wid_design_system/src/theme/bottom_sheet_theme.dart';
 import 'package:wid_design_system/src/theme/button_themes.dart';
+import 'package:wid_design_system/src/theme/date_picker_theme.dart';
 import 'package:wid_design_system/src/theme/input_theme.dart';
 import 'package:wid_design_system/src/theme/palette.dart';
 import 'package:wid_design_system/src/theme/text_theme.dart';
+import 'package:wid_design_system/src/theme/time_picker_theme.dart';
 
 /// Custom theme for Wid Design System
 abstract class WidAppTheme {
@@ -14,11 +16,12 @@ abstract class WidAppTheme {
     return common.copyWith(
       splashColor: WidAppColors.n300,
       hintColor: WidAppColors.n300,
-      canvasColor: WidAppColors.n100,
-      scaffoldBackgroundColor: WidAppColors.white,
-      textSelectionTheme: const TextSelectionThemeData(
+      canvasColor: WidAppColors.light,
+      scaffoldBackgroundColor: WidAppColors.n100,
+      dialogBackgroundColor: WidAppColors.n100,
+      textSelectionTheme: TextSelectionThemeData(
         cursorColor: WidAppColors.black,
-        selectionColor: WidAppColors.callToAction,
+        selectionColor: WidAppColors.primary.shade300,
       ),
       brightness: Brightness.light,
       textTheme: WidTextTheme.lightTextTheme,
@@ -33,6 +36,8 @@ abstract class WidAppTheme {
         color: WidAppColors.light,
       ),
       colorScheme: lightColorScheme,
+      timePickerTheme: WidTimePickerTheme.timePickerLightTheme,
+      datePickerTheme: WidDatePickerThemes.datePickerLightTheme,
     );
   }
 
@@ -43,6 +48,7 @@ abstract class WidAppTheme {
       hintColor: WidAppColors.n800,
       canvasColor: WidAppColors.n800,
       scaffoldBackgroundColor: WidAppColors.black,
+      dialogBackgroundColor: WidAppColors.n800,
       textSelectionTheme: const TextSelectionThemeData(
         cursorColor: WidAppColors.light,
         selectionColor: WidAppColors.callToAction,
@@ -60,6 +66,8 @@ abstract class WidAppTheme {
         color: WidAppColors.n800,
       ),
       colorScheme: darkColorScheme,
+      timePickerTheme: WidTimePickerTheme.timePickerDarkTheme,
+      datePickerTheme: WidDatePickerThemes.datePickerDarkTheme,
     );
   }
 
@@ -67,6 +75,11 @@ abstract class WidAppTheme {
   static ThemeData get common {
     return ThemeData(
       useMaterial3: false,
+      dropdownMenuTheme: const DropdownMenuThemeData(
+        menuStyle: MenuStyle(
+          maximumSize: MaterialStatePropertyAll<Size?>(Size.fromHeight(300)),
+        ),
+      ),
       fontFamily: 'Quicksand',
       primaryColor: WidAppColors.primary,
       primarySwatch: WidAppColors.primary,

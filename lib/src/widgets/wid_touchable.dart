@@ -9,7 +9,7 @@ class WidTouchable extends StatelessWidget {
   final Widget child;
 
   /// onPress callback
-  final VoidCallback onPress;
+  final VoidCallback? onPress;
 
   @override
   Widget build(BuildContext context) {

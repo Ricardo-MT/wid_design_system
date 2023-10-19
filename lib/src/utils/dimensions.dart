@@ -21,7 +21,7 @@ class WidAppDimensions {
   static double cardLargeSpacing = cardSmallSpacing * 2.2;
 
   /// Default page inset
-  static double pageInsetGap = 30;
+  static double pageInsetGap = 20;
 
   /// Default animation duration
   static int animationDuration = 200;

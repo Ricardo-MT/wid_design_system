@@ -1,17 +1,22 @@
+# 0.2.7
+- feat: Implemented DatePickerTheme 🎉
+- feat: Implemented TimePickerTheme 🎉
+- feat: Improved color coexistence 🎉
+
 # 0.2.6
 - hot-fix: Fixed button theme colors
 
 # 0.2.5
-- feat: Improved color coexistence
+- feat: Improved color coexistence 🎉
 
 # 0.2.4
-- feat: Implemented ChipTheme
-- feat: Implemented BottomSheetTheme
+- feat: Implemented ChipTheme 🎉
+- feat: Implemented BottomSheetTheme 🎉
 
 # 0.2.3
 - hot-fix: Misspelling in Appbar theme
 - feat: Replaced grey1-4 with n100-900 palette color
-- feat: Implemented MaterialColor color swatch with pink
+- feat: Implemented MaterialColor color swatch with pink 🎉
 
 # 0.2.2
 - hot-fix: Minor adjustment in input text´s label styles
