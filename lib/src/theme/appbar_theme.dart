@@ -9,7 +9,7 @@ class WidAppbarTheme {
     return const AppBarTheme(
       centerTitle: false,
       foregroundColor: WidAppColors.black,
-      backgroundColor: WidAppColors.white,
+      backgroundColor: WidAppColors.n100,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarBrightness: Brightness.light,
       ),
