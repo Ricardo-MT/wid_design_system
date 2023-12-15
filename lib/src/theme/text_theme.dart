@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:wid_design_system/src/utils/defaults.dart';
 import 'package:wid_design_system/wid_design_system.dart';
 
 /// Text theme implementation
 class WidTextTheme {
+  /// Default constructor
+  WidTextTheme({this.fontFamily = WidAppDefaults.fontFamily});
+
+  /// The font family to use for the text styles
+  final String fontFamily;
+
   /// Custom light text theme
-  static TextTheme get lightTextTheme {
+  TextTheme get lightTextTheme {
     return Typography.blackCupertino.merge(defaultTextTheme).apply(
-          fontFamily: 'Quicksand',
+          fontFamily: fontFamily,
         );
   }
 
   /// Custom dark text theme
-  static TextTheme get darkTextTheme {
+  TextTheme get darkTextTheme {
     return Typography.whiteCupertino.merge(defaultTextTheme).apply(
-          fontFamily: 'Quicksand',
+          fontFamily: fontFamily,
         );
   }
 
   /// Custom text theme
   static TextTheme get defaultTextTheme {
     return TextTheme(
+      /// H1
       displayLarge: WidTextStyle.headerStyles.copyWith(fontSize: 38),
 
       /// H2

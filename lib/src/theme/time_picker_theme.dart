@@ -3,28 +3,37 @@ import 'package:wid_design_system/src/theme/palette.dart';
 
 /// Custom theme for Wid Design System
 class WidTimePickerTheme {
+  /// Default constructor
+  WidTimePickerTheme({
+    MaterialColor? primaryColor,
+  }) {
+    _primaryColor = primaryColor ?? WidAppColors.primary;
+  }
+
+  late final MaterialColor _primaryColor;
+
   /// Light theme implementation
-  static TimePickerThemeData get timePickerLightTheme {
+  TimePickerThemeData get timePickerLightTheme {
     return TimePickerThemeData(
-      dialHandColor: WidAppColors.primary,
+      dialHandColor: _primaryColor,
       dialTextColor: WidAppColors.black,
       dayPeriodColor: WidAppColors.n300,
       hourMinuteColor: WidAppColors.n300,
       dialBackgroundColor: WidAppColors.n300,
-      hourMinuteTextColor: WidAppColors.primary,
+      hourMinuteTextColor: _primaryColor,
       dayPeriodBorderSide: BorderSide.none,
     );
   }
 
   /// Dark theme implementation
-  static TimePickerThemeData get timePickerDarkTheme {
+  TimePickerThemeData get timePickerDarkTheme {
     return TimePickerThemeData(
-      dialHandColor: WidAppColors.primary,
+      dialHandColor: _primaryColor,
       dialTextColor: WidAppColors.white,
       dayPeriodColor: WidAppColors.n600,
       hourMinuteColor: WidAppColors.n600,
       dialBackgroundColor: WidAppColors.n600,
-      hourMinuteTextColor: WidAppColors.primary,
+      hourMinuteTextColor: _primaryColor,
       dayPeriodBorderSide: BorderSide.none,
     );
   }

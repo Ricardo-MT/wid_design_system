@@ -3,16 +3,25 @@ import 'package:wid_design_system/src/theme/palette.dart';
 
 /// Custom theme for Wid Design System
 class WidDatePickerThemes {
+  /// Default constructor
+  WidDatePickerThemes({
+    MaterialColor? primaryColor,
+  }) {
+    _primaryColor = primaryColor ?? WidAppColors.primary;
+  }
+
+  late final MaterialColor _primaryColor;
+
   /// Light theme implementation
-  static DatePickerThemeData get datePickerLightTheme {
+  DatePickerThemeData get datePickerLightTheme {
     return DatePickerThemeData(
       headerForegroundColor: WidAppColors.light,
-      headerBackgroundColor: WidAppColors.primary,
+      headerBackgroundColor: _primaryColor,
       todayBackgroundColor: const MaterialStatePropertyAll(Colors.transparent),
-      todayForegroundColor: MaterialStatePropertyAll(WidAppColors.primary),
+      todayForegroundColor: MaterialStatePropertyAll(_primaryColor),
       dayBackgroundColor: MaterialStateColor.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
-          return WidAppColors.primary;
+          return _primaryColor;
         }
         return Colors.transparent;
       }),
@@ -20,15 +29,15 @@ class WidDatePickerThemes {
   }
 
   /// Dark theme implementation
-  static DatePickerThemeData get datePickerDarkTheme {
+  DatePickerThemeData get datePickerDarkTheme {
     return DatePickerThemeData(
       headerForegroundColor: WidAppColors.light,
       headerBackgroundColor: WidAppColors.n800,
       todayBackgroundColor: const MaterialStatePropertyAll(Colors.transparent),
-      todayForegroundColor: MaterialStatePropertyAll(WidAppColors.primary),
+      todayForegroundColor: MaterialStatePropertyAll(_primaryColor),
       dayBackgroundColor: MaterialStateColor.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
-          return WidAppColors.primary;
+          return _primaryColor;
         }
         return Colors.transparent;
       }),

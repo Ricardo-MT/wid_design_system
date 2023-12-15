@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wid_design_system/wid_design_system.dart';
 
+final widTheme = WidAppTheme.fromBlackAndWhite(
+
+    /// Uncomment these lines and hit Hot Restart to use a custom color and font.
+    // primaryColor: white,
+
+    /// You can use any font you want, but make sure to include it in
+    /// your pubspec.yaml file.
+    // fontFamily: "Kalnia",
+    );
+
 void main() {
   runApp(const MyApp());
 }
@@ -28,8 +38,8 @@ class MyPresentationApp extends StatelessWidget {
     return MaterialApp(
       title: 'Wid DS - Storybook',
       debugShowCheckedModeBanner: false,
-      darkTheme: WidAppTheme.dark,
-      theme: WidAppTheme.light,
+      darkTheme: widTheme.dark,
+      theme: widTheme.light,
       themeMode: Provider.of<WidThemeProvider>(context, listen: true).mode,
       home: const MyHomePage(title: 'Wid DS - Storybook'),
     );
@@ -81,7 +91,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {
                       showModalBottomSheet(
                         context: context,
-                        builder: (context) => Container(),
+                        builder: (context) => const Center(
+                          child: SizedBox(
+                            height: 400,
+                            child: Text("This is a modal bottom sheet"),
+                          ),
+                        ),
                       );
                     },
                     child: const Text("Contained (open dialog)"),
@@ -97,9 +112,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Text("Outlined"),
                   ),
                   spacerM,
-                  const WidButton(
-                    onPressed: dummyFunction,
-                    text: "Call to action",
+                  WidButton(
+                    onPressed: () => showTimePicker(
+                        context: context, initialTime: TimeOfDay.now()),
+                    text: "Call to action (select time)",
                     variant: WidButtonVariant.callToAction,
                   ),
                   spacerM,
@@ -176,10 +192,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: const FloatingActionButton(
-          key: Key('homeView_addTodo_floatingActionButton'),
-          onPressed: dummyFunction,
-          child: Icon(Icons.add),
+        floatingActionButton: FloatingActionButton(
+          key: const Key('homeView_addTodo_floatingActionButton'),
+          onPressed: () => showDatePicker(
+            context: context,
+            initialDate: DateTime.now(),
+            firstDate: DateTime.now(),
+            lastDate: DateTime.now().add(const Duration(days: 365)),
+          ),
+          child: const Icon(Icons.date_range),
         ),
       ),
     );

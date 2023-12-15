@@ -39,3 +39,15 @@ flutter:
           weight: 400
         - asset: packages/wid_design_system/fonts/Quicksand-Light.ttf
           weight: 300
+    - family: Kalnia
+      fonts:
+        - asset: assets/fonts/Kalnia_Expanded-Bold.ttf
+          weight: 800
+        - asset: assets/fonts/Kalnia_Expanded-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Kalnia_Expanded-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Kalnia_Expanded-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Kalnia_Expanded-Light.ttf
+          weight: 300

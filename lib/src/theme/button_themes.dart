@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:wid_design_system/src/utils/defaults.dart';
 import 'package:wid_design_system/wid_design_system.dart';
 
 /// Theme properties for buttons
 class WidButtonThemes {
+  /// Default constructor
+  WidButtonThemes({
+    String fontFamily = WidAppDefaults.fontFamily,
+    MaterialColor? primaryColor,
+  }) {
+    _primaryColor = primaryColor ?? WidAppColors.primary;
+    _textStyles = TextStyle(
+      fontWeight: FontWeight.w600,
+      fontFamily: fontFamily,
+    );
+  }
+
+  late final TextStyle _textStyles;
+  late final MaterialColor _primaryColor;
+
   /// Elevated button for dark theme
-  static ElevatedButtonThemeData get elevatedButtonDarkTheme {
+  ElevatedButtonThemeData get elevatedButtonDarkTheme {
     return ElevatedButtonThemeData(
       style: ButtonStyle(
         padding: MaterialStateProperty.all(_buttonsPadding),
-        backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-          if (states.contains(MaterialState.disabled)) {
-            return WidAppColors.n300;
-          }
-          return WidAppColors.primary.shade600;
-        }),
-        foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-          if (states.contains(MaterialState.disabled)) {
-            return WidAppColors.n400;
-          }
-          return WidAppColors.light;
-        }),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
@@ -33,22 +37,10 @@ class WidButtonThemes {
   }
 
   /// Elevated button for light theme
-  static ElevatedButtonThemeData get elevatedButtonLightTheme {
+  ElevatedButtonThemeData get elevatedButtonLightTheme {
     return ElevatedButtonThemeData(
       style: ButtonStyle(
         padding: MaterialStateProperty.all(_buttonsPadding),
-        backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-          if (states.contains(MaterialState.disabled)) {
-            return WidAppColors.n300;
-          }
-          return WidAppColors.primary.shade600;
-        }),
-        foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-          if (states.contains(MaterialState.disabled)) {
-            return WidAppColors.n400;
-          }
-          return WidAppColors.light;
-        }),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
@@ -62,7 +54,7 @@ class WidButtonThemes {
   }
 
   /// Outlined button for dark theme
-  static OutlinedButtonThemeData get outlinedButtonDarkTheme {
+  OutlinedButtonThemeData get outlinedButtonDarkTheme {
     return OutlinedButtonThemeData(
       style: ButtonStyle(
         padding: MaterialStateProperty.all(_buttonsPadding),
@@ -76,20 +68,13 @@ class WidButtonThemes {
         side: MaterialStateProperty.resolveWith<BorderSide>((states) {
           if (states.contains(MaterialState.disabled)) {
             return BorderSide(
-              color: WidAppColors.n600,
               width: WidAppDimensions.borderWidth,
             );
           }
           return BorderSide(
-            color: WidAppColors.primary,
+            color: _primaryColor,
             width: WidAppDimensions.borderWidth,
           );
-        }),
-        foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-          if (states.contains(MaterialState.disabled)) {
-            return WidAppColors.n600;
-          }
-          return WidAppColors.primary;
         }),
         textStyle: MaterialStateProperty.all(_textStyles),
       ),
@@ -97,7 +82,7 @@ class WidButtonThemes {
   }
 
   /// Outlined button for light theme
-  static OutlinedButtonThemeData get outlinedButtonLightTheme {
+  OutlinedButtonThemeData get outlinedButtonLightTheme {
     return OutlinedButtonThemeData(
       style: ButtonStyle(
         padding: MaterialStateProperty.all(_buttonsPadding),
@@ -111,20 +96,13 @@ class WidButtonThemes {
         side: MaterialStateProperty.resolveWith<BorderSide>((states) {
           if (states.contains(MaterialState.disabled)) {
             return BorderSide(
-              color: WidAppColors.n500,
               width: WidAppDimensions.borderWidth,
             );
           }
           return BorderSide(
-            color: WidAppColors.primary,
+            color: _primaryColor,
             width: WidAppDimensions.borderWidth,
           );
-        }),
-        foregroundColor: MaterialStateProperty.resolveWith<Color>((states) {
-          if (states.contains(MaterialState.disabled)) {
-            return WidAppColors.n500;
-          }
-          return WidAppColors.primary;
         }),
         textStyle: MaterialStateProperty.all(_textStyles),
       ),
@@ -132,22 +110,20 @@ class WidButtonThemes {
   }
 
   /// Text button theme for light theme
-  static TextButtonThemeData get textButtonLightTheme {
+  TextButtonThemeData get textButtonLightTheme {
     return TextButtonThemeData(
       style: TextButton.styleFrom(
         padding: _buttonsPadding,
-        foregroundColor: WidAppColors.primary,
         textStyle: _textStyles,
       ),
     );
   }
 
   /// Text button theme for dark theme
-  static TextButtonThemeData get textButtonDarkTheme {
+  TextButtonThemeData get textButtonDarkTheme {
     return TextButtonThemeData(
       style: TextButton.styleFrom(
         padding: _buttonsPadding,
-        foregroundColor: WidAppColors.primary,
         textStyle: _textStyles,
       ),
     );
@@ -155,7 +131,3 @@ class WidButtonThemes {
 }
 
 const _buttonsPadding = EdgeInsets.symmetric(horizontal: 16, vertical: 10);
-const _textStyles = TextStyle(
-  fontWeight: FontWeight.w600,
-  fontFamily: 'Quicksand',
-);

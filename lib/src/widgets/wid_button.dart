@@ -1,7 +1,5 @@
 // ignore_for_file: constant_identifier_names
 import 'package:flutter/material.dart';
-import 'package:wid_design_system/src/theme/palette.dart';
-
 import 'package:wid_design_system/src/widgets/wid_text.dart';
 
 /// Button implementation with variants
@@ -60,7 +58,7 @@ class WidButton extends StatelessWidget {
         button = ElevatedButton(
           onPressed: disabled ? null : onPressed,
           style: ElevatedButton.styleFrom(
-            backgroundColor: WidAppColors.callToAction,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
           ).merge(Theme.of(context).elevatedButtonTheme.style),
           child: WidText(
             text: text,
