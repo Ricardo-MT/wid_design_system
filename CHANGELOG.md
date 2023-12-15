@@ -1,3 +1,8 @@
+# 1.0.0
+- MASSIVE BREAKING CHANGES
+- breaking-change: Most theme clases changed from having static members to have instance members.
+- feat: Added new WidAppTheme factory constructor "High contrast black and white".
+
 # 0.2.7
 - feat: Implemented DatePickerTheme 🎉
 - feat: Implemented TimePickerTheme 🎉
